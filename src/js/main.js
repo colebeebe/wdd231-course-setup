@@ -1,21 +1,18 @@
-import { getParkData } from "./parkService.mjs";
+import { getParkData, parkInfoLinks } from "./parkService.mjs";
+import { mediaCardTemplate } from "./templates.mjs"
+import { setHeaderFooter } from "./setHeaderFooter.mjs";
 
-const parkData = getParkData();
+const parkData = getParkData()
+setHeaderFooter(parkData);
 
-const disclaimerLink = document.querySelector(".disclaimer > a");
-disclaimerLink.textContent = parkData.fullName;
-disclaimerLink.href = parkData.url;
+const intro = document.querySelector(".intro");
+intro.innerHTML = `
+    <h1>${parkData.fullName}</h1>
+    <p>${parkData.description}</p>
+`;
 
-document.title = parkData.fullName;
+const info = document.querySelector(".info");
+const info_cards = parkInfoLinks.map(info => mediaCardTemplate(info));
 
-const heroImage = document.querySelector(".hero > img");
-const imageInfo = parkData.images[0];
-heroImage.src = imageInfo.url;
-heroImage.alt = imageInfo.altText;
+info.innerHTML = info_cards.join('');
 
-const heroTitle = document.querySelector(".hero-title");
-heroTitle.textContent = parkData.name;
-const designation = document.querySelector(".park-designation");
-designation.textContent = parkData.designation;
-const states = document.querySelector(".park-states");
-states.textContent = parkData.states;
