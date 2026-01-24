@@ -179,6 +179,9 @@ const park = {
   designation: "National Park"
 };
 
+const baseUrl = "https://developer.nps.gov/api/v1/";
+const apiKey = import.meta.env.VITE_NPS_API_KEY;
+
 export const parkInfoLinks = [
   {
     name: "Current Conditions &#x203A;",
@@ -201,6 +204,30 @@ export const parkInfoLinks = [
   }
 ];
 
-export function getParkData() {
-  return park;
+async function getJson(url) {
+  const options = {
+    method: "GET",
+    headers: {
+      "X-Api-Key": apiKey
+    }
+  };
+  let data = {};
+  const response = await fetch(baseUrl + url, options);
+  if (response.ok) {
+    data = await response.json();
+  } else throw new Error("response not ok")
+  return data;
+}
+
+export async function getParkData() {
+  const parkData = await getJson("parks?parkCode=abli");
+  return parkData.data[0];
+}
+
+export function getInfoLinks(data) {
+  const images = parkInfoLinks.map((item, index) => {
+    item.image = data[index + 1].url;
+    return item;
+  });
+  return images;
 }

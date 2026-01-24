@@ -1,0 +1,19 @@
+footer {
+  background-image: url('../../images/topo_pattern.png');
+  padding: 20px;
+}
+
+footer h3 {
+  text-transform: uppercase;
+  font-family: serif;
+}
+
+footer h4 {
+  margin: 15px 0;
+
+}
+
+footer p {
+  line-height: 1;
+  margin: 0.5rem 0;
+}

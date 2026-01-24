@@ -1,0 +1,142 @@
+/* Title and logo styling */
+
+.site-title {
+  display: flex;
+  align-items: center;
+}
+.site-title > span {
+  font-size: 1rem;
+  margin-left: 0.3em;
+  font-weight: 700;
+}
+
+.logo {
+  height: 0;
+  width: 0;
+  margin: 0.5em;
+  display: inline-block;
+  border-top: 34px solid var(--bs-light-green);
+  border-left: 13px solid transparent;
+  border-right: 13px solid transparent;
+}
+
+/* Global header */
+
+#global-nav-toggle {
+  text-transform: uppercase;
+  color: white;
+  background-color: black;
+  border: none;
+  border-left: 1px solid gray;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+}
+
+#global-nav-toggle:hover {
+  cursor: pointer;
+}
+
+.global-header, #park-header {
+  background-color: black;
+}
+
+.global-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.global-header__right {
+  display: flex;
+  align-items: center;
+}
+
+.global-header__right .search-icon {
+  padding: 0 1rem;
+  margin-top: 6px;
+}
+
+header a, .hero-subtitle > span {
+  text-decoration: none;
+  color: white;
+}
+
+.global-header__right .search-icon {
+  padding: 0 1rem;
+  margin-top: 6px;
+}
+
+/* Hero banner */
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.hero > img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+}
+
+.hero-info {
+  background-color: rgba(0, 0, 0, 0.7);
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  padding: 0.5em 1em;
+}
+
+.hero-title {
+  font-size: 1.8rem;
+}
+
+.hero-subtitle {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8rem;
+}
+
+/* Park nav */
+
+.park-nav > ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+.park-nav a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8em 2em;
+}
+
+.park-nav a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.park-nav svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Icons */
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+svg {
+  background-color: var(--bs-black);
+  fill: white;
+}
