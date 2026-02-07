@@ -1,3 +1,5 @@
+import spritePath from '../../images/sprite.symbol.svg';
+
 export function mediaCardTemplate(info) {
     return `
         <div class="media-card">
@@ -34,4 +36,40 @@ export function footerTemplate(info) {
             <p>${voice}</p>
         </section>
     `;
+}
+
+export function alertTemplate(alert) {
+    let alertType = "";
+    if (alert.category === 'Park Closure') {
+        alertType = 'closure';
+    }
+    else {
+        alertType = alert.category.toLowerCase();
+    }
+    
+    return `
+        <li class="alert">
+        <svg class="icon" focusable="false" aria-hidden="true">
+            <use xlink:href="${spritePath}#alert-${alertType}"></use>
+        </svg>
+        <div>
+            <h3 class="alert-${alertType}">${alert.title}</h3>
+            <p>${alert.description}</p>
+        </div>
+        </li>
+    `;
+}
+
+export function visitorCenterTemplate(data) {
+    return `
+        <li>
+            <h3>${data.name}</h3>
+            <p>${data.description}</p>
+            <p>${data.directionsInfo}</p>
+        </li>
+    `;
+}
+
+export function activitiesTemplate(activities) {
+    return activities.map(activity => `<li>${activity.name}</li>`).join('');
 }

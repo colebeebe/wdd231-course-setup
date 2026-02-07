@@ -181,6 +181,7 @@ const park = {
 
 const baseUrl = "https://developer.nps.gov/api/v1/";
 const apiKey = import.meta.env.VITE_NPS_API_KEY;
+const parkCode = 'chat';
 
 export const parkInfoLinks = [
   {
@@ -220,7 +221,7 @@ async function getJson(url) {
 }
 
 export async function getParkData() {
-  const parkData = await getJson("parks?parkCode=abli");
+  const parkData = await getJson("parks?parkCode=" + parkCode);
   return parkData.data[0];
 }
 
@@ -230,4 +231,14 @@ export function getInfoLinks(data) {
     return item;
   });
   return images;
+}
+
+export async function getAlerts() {
+  const alertData = await getJson("alerts?parkCode=" + parkCode);
+  return alertData.data;
+}
+
+export async function getVisitorCenterData() {
+  const visitorCenterData = await getJson("visitorcenters?parkCode=" + parkCode);
+  return visitorCenterData.data;
 }

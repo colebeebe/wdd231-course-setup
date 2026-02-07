@@ -1,4 +1,10 @@
-/* Intro and info sections */
+@import "partials/variables.css";
+@import "partials/utilities.css";
+@import "partials/global.css";
+@import "partials/header.css";
+@import "partials/footer.css";
+@import "partials/blocks.css";
+@import "home.css";
 
 .intro {
   padding: 1em;

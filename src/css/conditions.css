@@ -1,0 +1,81 @@
+@import "partials/variables.css";
+@import "partials/utilities.css";
+@import "partials/global.css";
+@import "partials/header.css";
+@import "partials/footer.css";
+@import "partials/blocks.css";
+
+:root {
+    --alert-closure: #cb2027;
+    --alert-caution: #ed7e31;
+    --alert-information: #2451a9;
+    --alert-danger: #720f04;
+}
+
+main {
+    margin: 10px;
+}
+
+details {
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+summary:hover {
+    cursor: pointer;
+}
+
+.alerts > ul {
+    list-style: none;
+    padding: 0;
+}
+
+.alert {
+    margin: 0.5rem;
+    padding: 0.5rem 0 0.8rem 0;
+    display: flex;
+    gap: 1em;
+    border-bottom: 1px solid var(--bs-grey-3);
+}
+
+.alert h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.alert p {
+    margin: 0;
+}
+
+.alert svg {
+    height: 30px;
+    width: 30px;
+    margin: 0.25em;
+    flex: 0 0 auto;
+}
+
+.alert-closure {
+    color: var(--alert-closure);
+}
+
+.alert-information {
+    color: var(--alert-information);
+}
+
+.alert-caution {
+    color: var(--alert-caution);
+}
+
+.alert-danger {
+    color: var(--alert-danger);
+}
+
+.visitor ul {
+    list-style: none;
+    padding: 0;
+}
+
+.visitor li {
+    border-bottom: 1px solid lightgray;
+}
