@@ -26,8 +26,11 @@
 }
 
 .global-header {
-  display: flex;
+  display: grid;
   justify-content: space-between;
+  fill: white;
+  color: white;
+  grid-template-columns: auto 200px;
 }
 
 .global-header__right {
@@ -156,6 +159,7 @@ header a, .hero-subtitle > span {
   margin: 0;
   display: flex;
   justify-content: center;
+  background-color: var(--bs-black);
   font-size: 0.8rem;
 }
 
