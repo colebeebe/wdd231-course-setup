@@ -181,7 +181,7 @@ const park = {
 
 const baseUrl = "https://developer.nps.gov/api/v1/";
 const apiKey = import.meta.env.VITE_NPS_API_KEY;
-const parkCode = 'chat';
+const parkCode = 'yell';
 
 export const parkInfoLinks = [
   {

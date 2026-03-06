@@ -1,6 +1,7 @@
 import { getParkData, getAlerts, getVisitorCenterData } from './modules/parkService.mjs';
 import { setHeaderFooter } from './modules/setHeaderFooter.mjs';
 import { activitiesTemplate, alertTemplate, visitorCenterTemplate } from './modules/templates.mjs';
+import { enableNavigation } from "./modules/navigation.mjs";
 import '../css/conditions.css';
 
 function setAlerts(alerts) {
@@ -24,6 +25,8 @@ async function init() {
     setVisitorCenters(visitorCenterData);
 
     document.querySelector('.activities ul').innerHTML = activitiesTemplate(parkData.activities);
+
+    enableNavigation();
 }
 
 init();

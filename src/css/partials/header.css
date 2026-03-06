@@ -148,6 +148,7 @@ header a, .hero-subtitle > span {
   font-size: 0.8em;
   overflow: hidden;
   max-height: 0;
+  transition: all 0.5s;
 }
 
 .global-nav__submenu a {
@@ -175,7 +176,8 @@ header a, .hero-subtitle > span {
   display: flex;
 }
 
-.global-nav.show {
+.global-nav.show,
+.global-nav__submenu.show {
   max-height: 1000px;
 }
 
